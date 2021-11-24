@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Formulario</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="estilos.css">    
+	</head>
+	<body>
+		<div id="particles-js"></div>
+		<div class="container">
+			<form action="signup.html" method="post" id="signup">
+				<h1>Formulario</h1>
+				<div class="field">
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" placeholder="Introduzca su Nombre"/>
+					<small></small>
+				</div>
+				<div class="field">
+					<label for="email">Apellidos:</label>
+					<input type="text" id="apellidos" name="Apellidos" placeholder="Sus Apellidos"/>
+					<small></small>
+				</div>
+				<div class="field">
+					<label for="email">Email:</label>
+					<input type="text" id="email" name="email" placeholder="Enter your email address"/>
+					<small></small>
+				</div>
+				<div class="field">
+					<label for="email">Telefono:</label>
+					<input type="text" id="Telefono" value="" onkeypress="return validar(event)" maxlength="9"  name="Telefono" placeholder="Escriba su Telefono"> 
+					<script type="text/javascript">
+						function validar(e) {
+						   
+						   
+						   
+							tecla = (document.all) ? e.keyCode : e.which;
+							if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+							if (tecla==44) return true; //Coma ( En este caso para diferenciar los decimales )
+							if (tecla==48) return true;
+							if (tecla==49) return true;
+							if (tecla==50) return true;
+							if (tecla==51) return true;
+							if (tecla==52) return true;
+							if (tecla==53) return true;
+							if (tecla==54) return true;
+							if (tecla==55) return true;
+							if (tecla==56) return true;
+							patron = /1/; //ver nota
+							te = String.fromCharCode(tecla);
+							return patron.test(te);
+						}
+						</script>
+					<small></small>
+				</div>
+				<label for="accept">
+				<h6 id="xd"><input type="checkbox" id="accept" name="accept" value="yes"> He leído y acepto las condiciones del servicio</h6>
+				</label>
+				<div class="field">
+					<button type="submit" class="full" onclick="comprobar()">Enviar</button>
+				</div>
+			</form>
+		</div>
+		<script src="particles.min.js"></script>
+		<script src="app.js"></script>
+		<script src="xd.js"></script>
+		<script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
+	</body>
+	
+</html>
